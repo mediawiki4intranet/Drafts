@@ -197,5 +197,5 @@ function Draft() {
 	}
 }
 
-var wgDraft = new Draft();
+window.wgDraft = new Draft();
 wgDraft.initialize();
