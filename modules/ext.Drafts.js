@@ -64,7 +64,11 @@ function Draft() {
 	/**
 	 * Sends draft data to server to be saved
 	 */
-	this.save = function() {
+	this.save = function(ev) {
+		ev = ev || window.event;
+		if (ev) {
+			ev.preventDefault ? ev.preventDefault() : ev.returnValue = false;
+		}
 		// Checks if a save is already taking place
 		if (state == 'saving') {
 			// Exits function immediately
