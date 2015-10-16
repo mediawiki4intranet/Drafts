@@ -206,7 +206,6 @@ class DraftHooks {
 			$buttonAttribs = array(
 				'id' => 'wpDraftSave',
 				'name' => 'wpDraftSave',
-				'class' => 'mw-ui-button',
 				'tabindex' => ++$tabindex,
 				'value' => $context->msg( 'drafts-save-save' )->text(),
 			);
