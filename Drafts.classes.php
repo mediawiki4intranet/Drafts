@@ -635,6 +635,7 @@ class Draft {
 			// this article
 			if ( $existingRow === false ) {
 				// Inserts row in the database
+				$data = array( 'draft_id' => $dbw->nextSequenceValue( 'drafts_draft_id_seq' ) ) + $data;
 				$dbw->insert( 'drafts', $data, __METHOD__ );
 				// Gets the id of the newly inserted row
 				$this->id = $dbw->insertId();

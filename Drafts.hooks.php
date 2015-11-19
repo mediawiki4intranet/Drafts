@@ -35,9 +35,10 @@ class DraftHooks {
 	 * @return bool
 	 */
 	public static function schema( $updater = null ) {
+		$dbType = $updater->getDb()->getType();
 		$updater->addExtensionUpdate( array( 'addTable', 'drafts',
-			__DIR__ . '/Drafts.sql', true ) );
-		if ( $updater->getDb()->getType() != 'sqlite' ) {
+			__DIR__ . ( $dbType == 'postgres' ? '/Drafts.pg.sql' : '/Drafts.sql' ), true ) );
+		if ( $dbType == 'mysql' ) {
 			$updater->addExtensionUpdate( array( 'modifyField', 'drafts', 'draft_token',
 				__DIR__ . '/patch-draft_token.sql', true ) );
 		}

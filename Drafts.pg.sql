@@ -7,10 +7,8 @@
 -- See Drafts.sql for notes on each column
 BEGIN;
 
-CREATE SEQUENCE drafts_id_seq;
-
 CREATE TABLE drafts (
-  draft_id INTEGER NOT NULL DEFAULT nextval('drafts_id_seq'),
+  draft_id SERIAL NOT NULL,
   draft_token TEXT,
   draft_user INTEGER NOT NULL DEFAULT 0,
   draft_page INTEGER NOT NULL default 0,
