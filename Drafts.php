@@ -97,6 +97,9 @@ $wgHooks['EditPageBeforeEditButtons'][] = 'DraftHooks::onEditPageBeforeEditButto
 // Register load hook
 $wgHooks['EditPage::showEditForm:initial'][] = 'DraftHooks::loadForm';
 
+// Get config vars hook
+$wgHooks['ResourceLoaderGetConfigVars'][] = 'DraftHooks::onResourceLoaderGetConfigVars';
+
 // Register JS / CSS
 $wgResourceModules[ 'ext.Drafts' ] = array(
 	'scripts'       => 'modules/ext.Drafts.js',

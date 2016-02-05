@@ -63,7 +63,8 @@ function Draft() {
 	 * Sends draft data to server to be saved
 	 */
 	this.save = function( event ) {
-		event.preventDefault();
+		if (event)
+			event.preventDefault();
 		// Checks if a save is already taking place
 		if (state === 'saving') {
 			// Exits function immediately
@@ -179,5 +180,5 @@ function Draft() {
 	};
 }
 
-var wgDraft = new Draft();
+window.wgDraft = new Draft();
 wgDraft.initialize();
