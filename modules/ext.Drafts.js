@@ -145,12 +145,12 @@ function Draft() {
 		// Check to see that the form and controls exist
 		if ( form && form.wpDraftSave ) {
 			// Handle manual draft saving through clicking the save draft button
-			$j( form.wpDraftSave ).on( 'click', self.save );
+			$( form.wpDraftSave ).on( 'click', self.save );
 			// Handle keeping track of state by watching for changes to fields
-			$j( form.wpTextbox1 ).on( 'keypress keyup keydown paste cut', self.change );
-			$j( form.wpSummary ).on( 'keypress keyup keydown paste cut', self.change );
+			$( form.wpTextbox1 ).on( 'keypress keyup keydown paste cut', self.change );
+			$( form.wpSummary ).on( 'keypress keyup keydown paste cut', self.change );
 			if ( form.wpMinoredit ) {
-				$j( form.wpMinoredit ).on( 'change', self.change );
+				$( form.wpMinoredit ).on( 'change', self.change );
 			}
 			// Gets configured specific values
 			configuration = {
