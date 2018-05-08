@@ -48,7 +48,7 @@ class DraftHooks {
 	/**
 	 * SpecialMovepageAfterMove hook
 	 */
-	public static function onSpecialMovepageAfterMove( $this, $ot, $nt ) {
+	public static function onSpecialMovepageAfterMove( $self, $ot, $nt ) {
 		// Update all drafts of old article to new article for all users
 		Drafts::move( $ot, $nt );
 		// Continue
